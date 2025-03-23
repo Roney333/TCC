@@ -1,0 +1,37 @@
+ Mortalidade - Sergipe
+Óbitos p/Residênc por Faixa Etária det e Sexo
+Período:2014
+"Faixa Etária det";"Masc";"Fem";"Ign";"Total"
+"0 a 6 dias";168;116;4;288
+"7 a 27 dias";53;35;-;88
+"28 a 364 dias";83;84;-;167
+"1 a 4 anos";38;46;-;84
+"5 a 9 anos";31;12;-;43
+"10 a 14 anos";26;27;-;53
+"15 a 19 anos";275;50;-;325
+"20 a 24 anos";341;60;-;401
+"25 a 29 anos";357;78;-;435
+"30 a 34 anos";318;96;-;414
+"35 a 39 anos";333;119;-;452
+"40 a 44 anos";331;139;-;470
+"45 a 49 anos";359;194;-;553
+"50 a 54 anos";438;237;-;675
+"55 a 59 anos";446;277;-;723
+"60 a 64 anos";528;351;-;879
+"65 a 69 anos";537;367;-;904
+"70 a 74 anos";587;448;1;1036
+"75 a 79 anos";514;544;-;1058
+"80 anos e mais";1351;1831;-;3182
+"Idade ignorada";5;1;1;7
+"Total";7119;5112;6;12237
+ Fonte: MS/SVS/CGIAE - Sistema de Informações sobre Mortalidade - SIM
+ Consulte o site da Secretaria Estadual de Saúde para mais informações.
+ Notas:
+ 
+ Dados finais disponíveis até 2023. Data da atualização dos dados 12/2024.
+ Em 2011, houve uma mudança no conteúdo da Declaração de Óbito, com maior detalhamento das informações coletadas. Para este ano, foram
+ utilizados simultaneamente os dois formulários. Para mais detalhes sobre as mudanças ocorridas e os seus efeitos, veja o documento
+ "Sistema de Informações sobre Mortalidade - SIM. Consolidação da base de dados de 2011".
+ No dia 13/06/2019, os arquivos do SIM referentes ao ano de notificação 2017 foram atualizados, com alteração das causas básicas de 2 registros e exclusão de 1 registro.
+ No dia 01/04/2020, os arquivos do SIM referentes ao ano de notificação 2019 foram atualizados, com alteração das causas básicas de 4 registros e exclusão de 1 registro.
+ 
