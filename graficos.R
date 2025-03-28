@@ -290,31 +290,16 @@ ggsave(paste0(ggraficos,'piramides.pdf'),
 
 
 
-# grafico comparativo ex
-
-dados_ex <- tibble(
-  Capitulo = rep(c("Cap I (infec)", "Cap II (neop)", "Cap IV (endoc)", "Cap IX (circ)", "Cap X (resp)", "Cap XX (c.e)"), 4),
-  ex = c(70.92, 70.98, 70.90, 71.10, 70.92, 71.61, 
-         79.61, 79.74, 79.64, 79.81, 79.66, 79.67, 
-         72.59, 72.69, 72.57, 72.78, 72.61, 73.07, 
-         80.93, 81.11, 80.96, 81.15, 80.98, 80.97),
-  Sexo = rep(c("Masculino", "Feminino", "Masculino", "Feminino"), each = 6),
-  Ano = rep(c(2014, 2014, 2023, 2023), each = 6)
-)
-
-# Criando o gráfico de linhas
-g1 <- ggplot(dados_ex, aes(x = Capitulo, y = ex, 
-                           color = interaction(Sexo, Ano), 
-                           group = interaction(Sexo, Ano))) +
-  geom_line(size = 1) +
-  geom_point(size = 3) +
-  geom_text(aes(label = ex), vjust = -0.5, size = 8) +
-  labs(x = "Capítulo", y = "Expectativa de Vida (ex)", color = "") +  
+# Criando o gráfico de barras
+g1 <- ggplot(dados_ex, aes(x = Capitulo, y = ex, fill = interaction(Sexo, Ano))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_text(aes(label = ex), vjust = -0.5, size = 6, position = position_dodge(width = 0.9)) +
+  labs(x = "Capítulo", y = "Expectativa de Vida (ex)", fill = "") +  
   theme_bw() +
   scale_y_continuous(expand = expansion(mult = c(0.02, 0.1))) +
-  scale_color_discrete(labels = function(x) gsub("\\.", " ", x)) +  # Substitui "." por espaço
-  guides(color = guide_legend(
-    override.aes = list(shape = NA, size = 1)  # Aumenta a espessura das linhas na legenda
+  scale_fill_discrete(labels = function(x) gsub("\\.", " ", x)) +  # Substitui "." por espaço
+  guides(fill = guide_legend(
+    override.aes = list(size = 1)  # Ajusta a espessura da legenda
   )) +
   theme(
     text = element_text(colour = "black"),
@@ -322,14 +307,15 @@ g1 <- ggplot(dados_ex, aes(x = Capitulo, y = ex,
     legend.title = element_text(size = 30),  
     legend.position = "bottom",
     legend.text = element_text(size = 30),
-    legend.key.size = unit(3, "cm"),  # Aumenta o tamanho das amostras na legenda
+    legend.key.size = unit(1, "cm"),  # Aumenta o tamanho das amostras na legenda
     axis.text.y = element_text(size = 30),
     axis.title.y = element_text(size = 30),
     axis.title.x = element_text(size = 30),
     axis.text.x = element_text(size = 30)
   )
 
-  
+
+
 
 
 ggsave(paste0(ggraficos, 'g1.pdf'),
@@ -363,7 +349,7 @@ g2 <- ggplot(dados_ex, aes(x = Capitulo, y = ex,
   geom_text(aes(label = ex, group = interaction(Sexo, Ano)), 
             position = position_dodge(width = 0.9), 
             vjust = -0.3, size = 8, check_overlap = TRUE) +
-  labs(x = "Capítulo", y = "Ganho na expectativa de Vida (ex)", fill = "") +  
+  labs(x = "Capítulo", y = "Ganho na expectativa de Vida", fill = "") +  
   theme_bw() +
   scale_y_continuous(expand = expansion(mult = c(0.05, 0.2))) +
   scale_fill_discrete(labels = function(x) gsub("\\.", " ", x)) +  # Substitui "." por espaço
